@@ -1,6 +1,6 @@
 {
   "name": "use-suspendable",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "react dependency injection library",
   "main": "dist/index.js",
   "author": "buhichan",
