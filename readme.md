@@ -13,7 +13,7 @@ It requires Weakmap and Symbol to work.
 
 # Notice
 
-You **must** ensure Objest.is equality of the suspendables you pass between renders, or else this hook will treat them as changed and re-subscribe every time it's called.
+You **MUST** ensure Objest.is equality of the suspendables you pass between renders, or else this hook will treat them as changed and re-subscribe every time it's called.
 For the same reason, you cannot create Promise or Observable under Suspense, it must be higher than Suspense in the component tree, like this:
 
 - SomeContext1.Provider value={useMemo(()=>axios.get("/api"),[])}
@@ -38,7 +38,7 @@ function App(){
 }
 
 function Page(){
-    const [v1, v2, v3, v4] = useSuspendable(observable, promise, nullOrPromise, undefinedOrPromise)
+    const [v1, v2, v3, v4] = useSuspendable(useContext(SomeContext1), useContext(SomeContext2), nullOrPromise, undefinedOrPromise)
 
     return <div>
         {v1}
